@@ -4126,6 +4126,7 @@ var componentVNodeHooks = {
     parentElm,
     refElm
   ) {
+    console.log("------------------------componentVNodeHooks.init") ;
     if (
       vnode.componentInstance &&
       !vnode.componentInstance._isDestroyed &&
@@ -5509,6 +5510,7 @@ function createPatchFunction (backend) {
   }
 
   function emptyNodeAt (elm) {
+    console.log("------------emptyNodeAt") ;
     return new VNode(nodeOps.tagName(elm).toLowerCase(), {}, [], undefined, elm)
   }
 
@@ -5557,6 +5559,7 @@ function createPatchFunction (backend) {
     ownerArray,
     index
   ) {
+    console.log("------------createElm") ;
     if (isDef(vnode.elm) && isDef(ownerArray)) {
       // This vnode was used in a previous render!
       // now it's used as a new node, overwriting its elm would cause
@@ -6153,7 +6156,7 @@ function createPatchFunction (backend) {
           oldElm._leaveCb ? null : parentElm$1,
           nodeOps.nextSibling(oldElm)
         );
-
+        console.log('******************createElm结束')
         // update parent placeholder node element, recursively
         if (isDef(vnode.parent)) {
           var ancestor = vnode.parent;
